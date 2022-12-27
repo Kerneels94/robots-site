@@ -1,0 +1,478 @@
+/* Fonts */
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&family=Raleway:ital,wght@1,100&display=swap");
+
+/* Root styles */
+:root {
+  /* Background colors */
+  --background-color-dark: #262626;
+  --background-color-light: #fff;
+
+  /*font sizes*/
+  --font-size-large: 1.2em;
+  --font-size-small: 1em;
+  --font-size-mobile: 1em;
+
+  /* Text colors */
+  --text-color-dark: rgba(71, 80, 81, 1);
+  --text-color-light: rgb(255, 255, 255);
+
+  /* Hover effects buttons*/
+  --hover-button-dark: rgba(13, 132, 139, 1);
+  --hover-button-light: rgba(254, 130, 0, 0.39);
+
+  /* Hover links */
+  --hover-links-dark: rgba(13, 132, 139, 1);
+  --hover-links-light: rgba(19, 220, 231, 1);
+
+  /* Transition */
+  --transition: all 0.2s linear;
+
+  /* Box Shadow */
+  --box-shadow: 5px 10px rgba(0, 0, 0, 0.8),
+    0.5em 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.8);
+}
+
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.darkmode {
+  --clr-light: #fff;
+  --clr-dark: #262626;
+  --clr-primary: #fff;
+
+  --foreground: var(--clr-light);
+  --backgrund: var(--clr-light);
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  /* font-family: 'Raleway', sans-serif; */
+}
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  background: linear-gradient(45deg, rgba(183, 1, 255, 0.2), rgba(0, 0, 0, 0.8)),
+    url(./assests/images/robot-hand.jpg) center/cover no-repeat;
+  width: 100%;
+  min-height: 110vh;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--hover-links-light);
+}
+
+p {
+  text-align: center;
+  font-size: var(--font-size-mobile);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1;
+  text-align: center;
+}
+
+h1,
+p {
+  margin-bottom: 1em;
+}
+
+/* Utility classes  */
+
+/* Dark mode class */
+
+.dark-mode-btn {
+  background-color: var(--background-color-dark);
+  --clr-dark: #262626;
+  visibility: hidden;
+}
+.btn {
+  display: inline-block;
+  border-radius: 5%;
+  font-size: var(--font-size-small);
+  background-color: var(--background-color-dark);
+  color: var(--text-color-light);
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--hover-button-dark);
+  color: var(--text-color-light);
+}
+
+.header-btn {
+  display: inline-block;
+  border-radius: 15%;
+  font-size: var(--font-size-small);
+  background-color: var(--background-color-dark);
+  color: var(--text-color-light);
+  padding: 0.5em;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.header-btn:hover {
+  background-color: var(--hover-button-dark);
+  color: var(--text-color-dark);
+}
+i {
+  font-size: 2em;
+}
+/* header */
+
+/* Fixed nav  */
+
+.fixed-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--background-color-light);
+  color: var(--text-color-dark);
+}
+
+.fixed-nav .links-container {
+  height: 3rem;
+}
+
+/* Nav */
+
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+
+.nav-header h2 {
+  font-size: var(--font-size-large);
+  color: var(--text-color-light);
+}
+
+.nav-toggle {
+  font-size: 1.2rem;
+  color: var(--text-color-light);
+  background: var(--background-color-dark);
+  border-color: transparent;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.nav-toggle:hover {
+  transform: rotate(90deg);
+}
+
+.links {
+  height: 0;
+  overflow: hidden;
+  display: none;
+  transition: var(--transition);
+  font-size: var(--font-size-mobile);
+}
+
+.links li a {
+  padding: 2rem;
+  color: var(--text-color-light);
+  line-height: 3;
+}
+
+.show-links {
+  background-color: var(--background-color-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 10rem;
+}
+
+.banner {
+  min-height: 100vh;
+
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.banner-text-container h1 {
+  padding-bottom: 0.5em;
+  font-size: var(--font-size-large);
+  color: var(--text-color-light);
+}
+
+.banner-text-container p {
+  padding-bottom: 0.5em;
+  font-size: var(--font-size-small);
+  color: var(--text-color-light);
+}
+
+.top-link {
+  font-size: 0.5em;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  background: var(--hover-button-dark);
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--background-color-light);
+  animation: bounce 2s ease-in-out infinite;
+
+  visibility: hidden;
+  z-index: -100;
+}
+.show-button {
+  visibility: visible;
+  z-index: 100;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Main Section styling */
+
+/* ID to split the sections */
+#split {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: min(100%, 85rem);
+  margin-inline: auto;
+  overflow: hidden;
+}
+
+.text-container h1 {
+  font-size: 1.25em;
+}
+
+.text-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.image img {
+  border-radius: 0.4rem;
+}
+
+/* Social links styling */
+.material-icons {
+  font-size: 2rem;
+}
+
+.material-icons a {
+  color: var(--background-color-dark);
+  margin-top: 2em;
+}
+
+.material-icons a:hover {
+  color: var(--hover-button-dark);
+}
+
+span {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+/* Cards section */
+.card {
+  width: 95%;
+  height: 50%;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border-radius: 2em;
+  background-color: var(--background-color-dark);
+  color: var(--background-color-light);
+}
+
+.card:hover {
+  box-shadow: var(--box-shadow);
+  color: var(--background-color-light);
+}
+
+.card a {
+  text-align: center;
+  display: block;
+  padding: 1rem 0.2rem;
+  color: var(--background-color-light);
+  background-color: var(--background-color-dark);
+  cursor: pointer;
+}
+
+.card a:hover {
+  background-color: var(--hover-button-dark);
+  color: var(--background-color-light);
+  box-shadow: #fff;
+}
+
+.card h2 {
+  font-size: 2rem;
+  margin: 1em 0;
+}
+
+.card-image {
+  height: 250px;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15%;
+}
+
+.car-1 {
+  background-image: url("./assests/images/arm1.jpg");
+}
+
+.car-2 {
+  background-image: url("./assests/images/robot-leg.jpg");
+}
+
+.car-3 {
+  background-image: url("./assests/images/robot-body.jpg");
+}
+
+/* Contact form section */
+/* Style inputs with type="text", select elements and textareas */
+input[type="text"],
+select,
+textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type="submit"] {
+  background-color: #04aa6d;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 5px;
+  /* background-color: #f2f2f2; */
+  padding: 20px;
+}
+
+/* Media queries */
+
+/* nav bar */
+@media (min-width: 50em) {
+  .nav-center {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .nav-header {
+    padding: 2rem;
+  }
+
+  .nav-header h2 {
+    font-size: var(--font-size-large);
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .links {
+    font-size: var(--font-size-mobile);
+    height: auto;
+    display: flex;
+  }
+  .header-btn {
+    visibility: visible;
+  }
+  .header-btn a {
+    color: var(--text-color-light);
+  }
+}
+
+@media (min-width: 50em) {
+  #split {
+    flex-direction: row;
+  }
+
+  #split > * {
+    flex-basis: 100%;
+  }
+
+  #split > * + * {
+    margin-left: 1em;
+  }
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .dark-mode-btn {
+    visibility: visible;
+  }
+
+  .card {
+    margin: 1.5rem;
+  }
+
+  section {
+    margin: 7rem;
+  }
+
+  /* .links {
+    visibility: hidden;
+    display: none;
+  } */
+}
